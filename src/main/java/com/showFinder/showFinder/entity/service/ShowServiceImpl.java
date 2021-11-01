@@ -54,7 +54,7 @@ public class ShowServiceImpl {
         try {
 
             List<ShowBasicInfo> popNames = showServicePrimaryDao.findPopularShows(PageRequest.of(0, 15));
-            if(popNames.size()>0) {
+            if(popNames.size() > 0) {
                 setImage(popNames);
                 getPopularShowResp.setShowNames(popNames);
 
