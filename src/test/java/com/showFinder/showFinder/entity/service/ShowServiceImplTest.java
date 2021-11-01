@@ -51,7 +51,7 @@ class ShowServiceImplTest {
 
     @Test
     void findByShowId() {
-        when(showServicePrimaryDao.findByShowId(anyInt())).thenReturn(Arrays.asList(show)); // Added this line
+        when(showServicePrimaryDao.findByShowId(anyInt())).thenReturn(Arrays.asList(show)); 
         GetShowInfoResp getShowInfoResp= new GetShowInfoResp();
         getShowInfoResp.setShowNames(Arrays.asList(show));
 
@@ -83,7 +83,6 @@ class ShowServiceImplTest {
         getFilterShowsRqst.setReleaseYearRange("2018-2020");
         getFilterShowsRqst.setPageNo(1);
         GetFilteredShowsResp getFilteredShowsResp= showService.getFilteredShows(getFilterShowsRqst);
-        System.out.println(getFilteredShowsResp.getShowInfoList());
         assertEquals(2, getFilteredShowsResp.getShowInfoList().size());
     }
 

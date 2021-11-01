@@ -74,7 +74,7 @@ class ShowFinderApplicationTests {
 		GetPopularShowResp getPopularShowResp= new GetPopularShowResp();
 		getPopularShowResp.setShowNames(Arrays.asList(showBasicInfo,showBasicInfo2));
 
-		when(showService.findPopularShows()).thenReturn(getPopularShowResp); // Added this line
+		when(showService.findPopularShows()).thenReturn(getPopularShowResp); 
 		mockMvc.perform(get("/showInfo/popular")
 						.contentType(MediaType.APPLICATION_JSON))
 				.andDo(MockMvcResultHandlers.print())
@@ -86,7 +86,7 @@ class ShowFinderApplicationTests {
 		GetPopularShowResp getPopularShowResp= new GetPopularShowResp();
 		getPopularShowResp.setShowNames(Arrays.asList(showBasicInfo,showBasicInfo2));
 
-		when(showService.findPopularShowsByPage(anyInt())).thenReturn(getPopularShowResp); // Added this line
+		when(showService.findPopularShowsByPage(anyInt())).thenReturn(getPopularShowResp); 
 		mockMvc.perform(get("/showInfo/popular/1")
 						.contentType(MediaType.APPLICATION_JSON))
 				.andDo(MockMvcResultHandlers.print())
@@ -99,7 +99,7 @@ class ShowFinderApplicationTests {
 		GetFilteredShowsResp getFilteredShowsResp= new GetFilteredShowsResp();
 		getFilteredShowsResp.setShowInfoList(Arrays.asList(showBasicInfo,showBasicInfo2));
 
-		when(showService.getFilteredShows(any())).thenReturn(getFilteredShowsResp); // Added this line
+		when(showService.getFilteredShows(any())).thenReturn(getFilteredShowsResp);
 		mockMvc.perform(get("/showInfo/filter?releaseyear=2011-2021&rating=1.0&genre=thriller,scifi&pageno=1")
 						.contentType(MediaType.APPLICATION_JSON))
 				.andDo(MockMvcResultHandlers.print())
@@ -113,7 +113,7 @@ class ShowFinderApplicationTests {
 		GetFilteredShowsResp getFilteredShowsResp= new GetFilteredShowsResp();
 		getFilteredShowsResp.setShowInfoList(Arrays.asList(showBasicInfo,showBasicInfo2));
 
-		when(showService.searchShows(any())).thenReturn(getFilteredShowsResp); // Added this line
+		when(showService.searchShows(any())).thenReturn(getFilteredShowsResp); 
 		mockMvc.perform(get("/showInfo/search?search=a quiet")
 						.contentType(MediaType.APPLICATION_JSON))
 				.andDo(MockMvcResultHandlers.print())
